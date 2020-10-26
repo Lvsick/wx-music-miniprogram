@@ -1,0 +1,26 @@
+<!--components/blog-ctrl/blog-ctrl.wxml-->
+<view class="ctrl">
+	<view class="ctrl-item" is-link bind:tap="showPopup">
+		<i class="iconfont icon-pinglun icon"></i>
+		<text class="item">评论</text>
+	</view>
+	<view class="ctrl-item share">
+		<button open-type="share" data-blogid="{{blogId}}" data-blog="{{blog}}" class="share-btn" hover-class="share-hover">
+			<i class="iconfont icon-icon_share icon"></i>
+			<text class="item">分享</text>
+		</button>
+	</view>
+</view>
+<van-popup show="{{ show }}" position="bottom" custom-style="height: 20%;" bind:close="onClose" closeable
+    close-icon="close">
+    <button class="login" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">获取微信授权信息 </button>
+  </van-popup>
+  <van-popup show="{{ showComment }}" position="bottom" custom-style="height:20%;" bind:close="onCommentClose" closeable>
+    <textarea bindinput="onInput"  class="comment-content" 
+    placeholder="说点什么吧..." value="{{content}}" fixed="true"
+    placeholder-style="font-size:32rpx;"
+    auto-focus
+    ></textarea>
+		<button class="send" form-type="submit" bind:tap="onSend">发送</button>
+  </van-popup>
+

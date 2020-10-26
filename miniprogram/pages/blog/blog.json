@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "c-search":"../../components/search/search",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "c-blog-card":"../../components/blog-card/blog-card",
+    "c-blog-ctrl":"../../components/blog-ctrl/blog-ctrl"
+  },
+  "navigationBarTitleText": "发现",
+  "enablePullDownRefresh": true
+}

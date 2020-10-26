@@ -1,0 +1,9 @@
+
+@import "icon.wxss";
+page{
+  font-family: -apple-system
+}
+.img{
+  width: 100%;
+  height: 100%;
+}

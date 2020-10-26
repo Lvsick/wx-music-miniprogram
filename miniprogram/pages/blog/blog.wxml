@@ -1,0 +1,31 @@
+<!--pages/blog/blog.wxml-->
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="publish-container">
+      <i class="iconfont icon-fabu" is-link bind:tap="showPopup"></i>
+    </view>
+    <view class="search-container">
+      <c-search iconfont="iconfont icon-search" bind:search="onSearch"/>
+    </view>
+  </view>
+
+  <view class="blog-list">
+    <block wx:for="{{blogList}}" wx:key="index">
+     <view class="blog-panel">
+      <c-blog-card blog="{{item}}" bindtap="goComment" data-blogid="{{item._id}}"></c-blog-card>
+      <c-blog-ctrl iconfont="iconfont"
+      icon-pinglun="icon-pinglun"
+      icon-icon_share="icon-icon_share"
+      blogId="{{item._id}}"
+      blog="{{item}}"
+      ></c-blog-ctrl>
+      </view>
+    </block>
+  </view>
+  <van-popup show="{{ show }}" position="bottom" custom-style="height: 20%;" bind:close="onClose" closeable
+    close-icon="close">
+    <button class="login" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">获取微信授权信息 </button>
+  </van-popup>
+  <van-toast id="van-toast" />
+</view>

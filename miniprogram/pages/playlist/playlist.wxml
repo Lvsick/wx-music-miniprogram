@@ -1,0 +1,45 @@
+<!--pages/playlist/playlist.wxml-->
+<van-tabs animated>
+	<van-tab title="精品">
+		<view class="playlist-container">
+			<block wx:for="{{playlistHigh}}" wx:key="index">
+				<c-playlist playlist="{{item}}"></c-playlist>
+			</block>
+		</view>
+	</van-tab>
+	<van-tab title="华语">
+		<view class="playlist-container">
+			<block wx:for="{{playlistChinese}}" wx:key="index">
+				<c-playlist playlist="{{item}}"></c-playlist>
+			</block>
+		</view>
+	</van-tab>
+	<van-tab title="说唱">
+		<view class="playlist-container">
+			<block wx:for="{{playlistRap}}" wx:key="index">
+				<c-playlist playlist="{{item}}"></c-playlist>
+			</block>
+		</view>
+	</van-tab>
+	<van-tab title="电子">
+		<view class="playlist-container">
+			<block wx:for="{{playlistEle}}" wx:key="index">
+				<c-playlist playlist="{{item}}"></c-playlist>
+			</block>
+		</view>
+	</van-tab>
+	<van-tab title="流行">
+		<view class="playlist-container">
+			<block wx:for="{{playlistPop}}" wx:key="index">
+				<c-playlist playlist="{{item}}"></c-playlist>
+			</block>
+		</view>
+	</van-tab>
+	<van-tab title="摇滚">
+  <view class="playlist-container">
+			<block wx:for="{{playlistRock}}" wx:key="index">
+				<c-playlist playlist="{{item}}"></c-playlist>
+			</block>
+		</view>
+  </van-tab>
+</van-tabs>

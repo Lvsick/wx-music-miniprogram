@@ -1,0 +1,28 @@
+<!--pages/blog-edit/blog-edit.wxml-->
+<view class="container">
+  <textarea name="" id="" cols="30" rows="10" 
+  bindinput="onInput" auto-focus="true"
+  bindfocus="onFocus" bindblur="onBlur"
+  class="content" placeholder="分享你的生活...">
+
+  </textarea>
+  <view  class="image-list"> 
+    <block wx:for="{{images}}" wx:key="index">
+      <view class="image-wrap" hover-class="none" hover-stop-propagation="false">
+        <image class="image" src="{{item}}" mode="aspectFill" lazy-load="false" bindtap="onPreviewImage" data-index="{{index}}">
+           <i class="iconfont icon-shanchu" bind:tap="onDelImage" data-index="{{index}}"></i>
+        </image>
+      </view>
+    </block>
+    <view class="image-wrap selectphoto" bindtap="onChooseImage" hidden="{{!selectPhoto}}">
+      <i class="iconfont icon-21"></i>
+    </view>
+  </view>
+</view>
+
+<view class="footer" style="bottom:{{footerBottom}}px">
+  <button class="send-btn" bind:tap="send">发布</button>
+</view>
+
+
+
